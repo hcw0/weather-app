@@ -6,14 +6,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <title>Weather App</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     </head>
     <body>
         <div class="container">
             <div class="container-body">
-                <header>
-                    
-                </header>
+                <div class="header">
+                    <div class="header-left">
+                    <h1>Weather</h1>
+                    </div>
+                    <div class="header-right">
+                        <form class="unit-form">
+                            <input type="radio" id="metric" name="unit-option" value="metric" checked>
+                            <label for="metric" class="metric">Metric</label>
+                            
+                            <input type="radio" id="imperial" name="unit-option" value="imperial">
+                            <label for="imperial" class="imperial">Imperial</label>
 
+                        </form>
+
+
+                        <form action="" class="search-bar">
+                            <input type="search" class="search-box" required>
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
     </body>
