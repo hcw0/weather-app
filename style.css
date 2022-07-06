@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 body {
     background-color: #bde0fe;
     margin: 0;
@@ -39,7 +44,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-right: 2rem;
+    justify-content: end;
+    width: 40%;
 }
 
 .unit-form input[type="radio"] {
@@ -49,6 +55,7 @@ body {
   }
   
 .unit-form label {
+    cursor: pointer;
     display: inline-block;
     background-color: #ddd;
     padding: 10px 20px;
@@ -73,4 +80,54 @@ body {
 }
 .metric {
     border-radius: 10px 0 0 10px;
+}
+
+.search-bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 3rem;
+    transition: 0.4s linear;
+    overflow: hidden;
+}
+.search-bar .search-box {
+    display: block;
+    appearance: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: black;
+    padding: 12px;
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s linear;
+}
+.search-bar .search-box::placeholder {
+    color: #24233A;
+    font-size: 1rem;
+}
+
+.search-bar .fa-search {
+    position: absolute;
+    right: calc(53px / 2);
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 12px;
+    height: 20px;
+    pointer-events: none;
+    color: white;
+}
+
+.search-bar:hover, .search-bar:focus {
+    max-width: 60%;
+}
+
+.search-bar:hover .search-box, .search-bar:focus .search-box {
+    background-color: white;
+    border: 2px solid black;
+}
+.search-bar:hover .fa-search{
+    color: black;
 }
