@@ -1,5 +1,5 @@
 * {
-    /* outline: 2px solid red; */
+    outline: 2px solid red;
     box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header {
@@ -164,4 +164,13 @@ body {
 }
 .search-bar:hover .fa-magnifying-glass {
     color: black;
+}
+
+.content {
+    display: flex;
+    height: 60%;
+}
+
+.footer {
+    height: 20%;
 }
