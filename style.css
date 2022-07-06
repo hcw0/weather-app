@@ -28,10 +28,10 @@ body {
     width: 90%;
     border-radius: 2rem;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .header {
@@ -198,9 +198,8 @@ body {
 
 
 .image-display {
-    z-index: 2;
     width: 50%;
-    height: 22vw;
+    height: 24vw;
     display: flex;
     justify-content: center;
 }
@@ -208,8 +207,8 @@ body {
     max-height: 100vh;
     object-fit: contain;
     border-radius: 50%;
-    margin-top: -5vw;
-    border: 2px solid black;
+    margin-top: -10vw;
+    /* border: 2px solid black; */
 }
 
 .content-right {
@@ -246,13 +245,32 @@ body {
     margin-bottom: .8rem;
 }
 
-
-
-
-
-
 .footer {
-    height: 15%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.forecast-container {
+    height: 80%;
+    display: flex;
+    border-radius: 10px;
+    
+}
+
+.day {
+    font-weight: bold;
+}
+
+.weather-cards p, .weather-cards h2 {
+    margin: 0;  
+}
+
+.weather-cards {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 @media only screen and (max-width: 700px) {
