@@ -1,5 +1,5 @@
 * {
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
     box-sizing: border-box;
 }
 
@@ -20,6 +20,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .container-body {
@@ -38,12 +39,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .header-left {
     display: flex;
     align-items: center;
-    margin-left: 2rem;
+    margin-left: 6rem;
 }
 
 .header-left h1 {
@@ -52,13 +55,14 @@ body {
 }
 
 
+
 .header-right {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: end;
     width: 40%;
-    margin-right: 2rem;
+    margin-right: 6rem;
 }
 
 .fa-meteor {
@@ -78,7 +82,7 @@ body {
     opacity: 0;
     position: fixed;
     width: 0;
-  }
+}
   
 .unit-form label {
     cursor: pointer;
@@ -168,9 +172,64 @@ body {
 
 .content {
     display: flex;
-    height: 60%;
+    height: 65%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.temperature {
+    width: 25%;
+}
+
+.temperature > h1 {
+    font-size: 7rem;
+}
+
+.temperature > h1, .temperature > h3,
+.temperature > p {
+    margin-left: 6rem;
+    margin-bottom: 0;
+}
+
+.temperature > h3,
+.temperature > p {
+    margin-top: 0;
+}
+
+
+.icon-display {
+    width: 50%;
+}
+
+.more-information {
+    width: 25%;
 }
 
 .footer {
-    height: 20%;
+    height: 15%;
+}
+
+@media only screen and (max-width: 700px) {
+    .header {
+        justify-content: center;
+        align-items: center;
+    }
+    .header > .header-left {
+        flex: 1 1 100%;
+        min-width: 0;
+        margin: 10px;
+        justify-content: center;
+    }
+    .header > .header-right {
+        margin: 10px;
+        flex: 1 1 400px;
+        min-width: 0;
+        justify-content: center;
+    }
+    .search-bar:hover, .search-bar:focus {
+        width: 125px;
+    }
+    .unit-form label {
+        font-size: .6rem;
+    }
 }
