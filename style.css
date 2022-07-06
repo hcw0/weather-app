@@ -1,5 +1,5 @@
 * {
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
     box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 body {
     background-color: #bde0fe;
     margin: 0;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Lato', sans-serif;
 }
 
 .container {
@@ -40,12 +40,38 @@ body {
     justify-content: space-between;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.header-left h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+
 .header-right {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: end;
     width: 40%;
+    margin-right: 2rem;
+}
+
+.fa-meteor {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.unit-form {
+    margin-right: 10px;
 }
 
 .unit-form input[type="radio"] {
@@ -57,21 +83,22 @@ body {
 .unit-form label {
     cursor: pointer;
     display: inline-block;
-    background-color: #ddd;
+    background-color: white;
     padding: 10px 20px;
     font-size: .8rem;
     height: 2.2rem;
-    border: 2px solid #444;
+    border: 2px solid black;
 }
 
 
 .unit-form input[type="radio"]:focus + label {
-    border: 2px solid #444;
+    border: 2px solid black;
 }
 
 .unit-form input[type="radio"]:checked + label {
-    background-color: #bfb;
-    border-color: #4c4;
+    background-color: white;
+    border-color: red;
+    color: red;
 }
 
 .imperial {
@@ -80,6 +107,12 @@ body {
 }
 .metric {
     border-radius: 10px 0 0 10px;
+}
+
+.imperial, .metric {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
 }
 
 .search-bar {
@@ -103,13 +136,14 @@ body {
     font-size: 1rem;
     cursor: pointer;
     transition: 0.4s linear;
+    font-weight: bold;
 }
 .search-bar .search-box::placeholder {
     color: #24233A;
     font-size: 1rem;
 }
 
-.search-bar .fa-search {
+.search-bar .fa-magnifying-glass {
     position: absolute;
     right: calc(53px / 2);
     top: 50%;
@@ -128,6 +162,6 @@ body {
     background-color: white;
     border: 2px solid black;
 }
-.search-bar:hover .fa-search{
+.search-bar:hover .fa-magnifying-glass {
     color: black;
 }
