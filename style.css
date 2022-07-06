@@ -177,23 +177,23 @@ body {
     flex-wrap: wrap;
 }
 
-.temperature {
+.content-left {
     width: 25%;
 }
 
-.temperature > h1 {
-    font-size: clamp(2rem, 8vw, 8rem);
+.content-left > h1 {
+    font-size: clamp(2rem, 8vw, 10rem);
 }
 
-.temperature > h1, .temperature > h3,
-.temperature > p {
+.content-left > h1, .content-left > h3,
+.content-left > p {
     margin-left: 5vw;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
-.temperature > h3,
-.temperature > p {
-    margin-top: 0;
+#temperature {
+    margin-top: 5rem;
 }
 
 
@@ -211,9 +211,33 @@ body {
     border: 2px solid black;
 }
 
-.more-information {
+.content-right {
     width: 25%;
 }
+
+.content-right h2, .content-right p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.content-right .fa-solid, .content-right .fa-brands {
+    margin-right: 10px;
+}
+
+.content-right h2 {
+    font-size: 2.5rem;
+}
+
+.feels-like-container, .humidity, .pressure, .wind-speed {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
+
+
 
 .footer {
     height: 15%;
