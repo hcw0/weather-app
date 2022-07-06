@@ -159,7 +159,7 @@ body {
 }
 
 .search-bar:hover, .search-bar:focus {
-    max-width: 50%;
+    max-width: 15vw;
 }
 
 .search-bar:hover .search-box, .search-bar:focus .search-box {
@@ -182,7 +182,7 @@ body {
 }
 
 .content-left > h1 {
-    font-size: clamp(2rem, 8vw, 10rem);
+    font-size: clamp(4rem, 7vw, 10rem);
 }
 
 .content-left > h1, .content-left > h3,
@@ -198,8 +198,9 @@ body {
 
 
 .image-display {
+    z-index: 2;
     width: 50%;
-    height: 100%;
+    height: 22vw;
     display: flex;
     justify-content: center;
 }
@@ -207,7 +208,7 @@ body {
     max-height: 100vh;
     object-fit: contain;
     border-radius: 50%;
-    margin-top: -6rem;
+    margin-top: -5vw;
     border: 2px solid black;
 }
 
@@ -215,23 +216,34 @@ body {
     width: 25%;
 }
 
-.content-right h2, .content-right p {
+.content-right-container {
+    margin-left: 10vw;
+}
+
+.content-right p {
     margin: 0;
-    font-weight: bold;
+    font-weight: 500;
+}
+
+.content-right h2 {
+    margin: 0;
+    font-size: 4rem;
+    font-size: clamp(1.4rem, 1.5vw, 4rem);
 }
 
 .content-right .fa-solid, .content-right .fa-brands {
     margin-right: 10px;
 }
 
-.content-right h2 {
-    font-size: 2.5rem;
+.feels-like-container {
+    margin-top: 4rem;
 }
 
 .feels-like-container, .humidity, .pressure, .wind-speed {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: .8rem;
 }
 
 
