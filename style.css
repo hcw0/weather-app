@@ -46,7 +46,7 @@ body {
 .header-left {
     display: flex;
     align-items: center;
-    margin-left: 6rem;
+    margin-left: 5vw;
 }
 
 .header-left h1 {
@@ -62,7 +62,7 @@ body {
     align-items: center;
     justify-content: end;
     width: 40%;
-    margin-right: 6rem;
+    margin-right: 5vw;
 }
 
 .fa-meteor {
@@ -159,7 +159,7 @@ body {
 }
 
 .search-bar:hover, .search-bar:focus {
-    max-width: 60%;
+    max-width: 50%;
 }
 
 .search-bar:hover .search-box, .search-bar:focus .search-box {
@@ -182,12 +182,12 @@ body {
 }
 
 .temperature > h1 {
-    font-size: 7rem;
+    font-size: clamp(2rem, 8vw, 8rem);
 }
 
 .temperature > h1, .temperature > h3,
 .temperature > p {
-    margin-left: 6rem;
+    margin-left: 5vw;
     margin-bottom: 0;
 }
 
@@ -197,8 +197,18 @@ body {
 }
 
 
-.icon-display {
+.image-display {
     width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.image-display > img {
+    max-height: 100vh;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-top: -6rem;
+    border: 2px solid black;
 }
 
 .more-information {
@@ -231,5 +241,10 @@ body {
     }
     .unit-form label {
         font-size: .6rem;
+    }
+
+    .content {
+        justify-content: center;
+        align-items: center;
     }
 }
