@@ -208,7 +208,6 @@ body {
     object-fit: contain;
     border-radius: 50%;
     margin-top: -10vw;
-    /* border: 2px solid black; */
 }
 
 .content-right {
@@ -271,6 +270,14 @@ body {
 .weather-cards {
     margin-left: 2rem;
     margin-right: 2rem;
+}
+
+.weather-cards i {
+    margin-top: 5px;
+}
+
+.weather-cards h2 {
+    margin-top: 5px;
 }
 
 @media only screen and (max-width: 700px) {
