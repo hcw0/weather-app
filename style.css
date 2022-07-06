@@ -103,7 +103,7 @@ body {
 
 .imperial {
     border-radius: 0 10px 10px 0;
-    margin-left: -10px;
+    margin-left: -3px;
 }
 .metric {
     border-radius: 10px 0 0 10px;
@@ -131,16 +131,16 @@ body {
     outline: none;
     border-radius: 50px;
     background-color: black;
-    padding: 12px;
+    padding: 15px;
     color: black;
-    font-size: 1rem;
+    font-size: .8rem;
     cursor: pointer;
     transition: 0.4s linear;
     font-weight: bold;
 }
 .search-bar .search-box::placeholder {
     color: #24233A;
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .search-bar .fa-magnifying-glass {
