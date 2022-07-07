@@ -201,6 +201,10 @@ body {
     font-size: clamp(1.5rem, 2vw, 6rem)
 }
 
+.content-left p {
+    font-weight: bold;
+}
+
 #temperature {
     margin-top: 7vw;
 }
@@ -237,7 +241,7 @@ body {
 
 .content-right p {
     margin: 0;
-    font-weight: 500;
+    font-weight: bold;
 }
 
 .content-right h2 {
@@ -266,7 +270,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: -1vw; */
 }
 
 .forecast-container {
