@@ -450,4 +450,16 @@ body {
     .search-bar .search-box::placeholder {
         font-size: 1.5rem;
     }
+
+    .content-left h3 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    i.fa-2x {
+        font-size: 3rem;
+    }
 }
