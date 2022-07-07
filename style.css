@@ -29,6 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    overflow: scroll;
 }
 
 .container-body {
@@ -300,7 +301,10 @@ body {
     margin-top: 5px;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 720px) {
+    .container {
+        height: 700px;
+    }
     .header {
         justify-content: center;
         align-items: center;
@@ -331,6 +335,22 @@ body {
     .content {
         justify-content: center;
         align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .content-left{
+        flex: 1 1 200px;
+        margin-top: 35px;
+    }
+
+    .content-left p, .content-left h2, .content-left h1, .content-left h3 {
+        text-align: center;
+    }
+
+    .image-display {
+        max-width: 300px;
+        height: 200px;
     }
 
     .image-display > img {
@@ -348,4 +368,8 @@ body {
     .content-right-container {
         margin-left: 1rem;
     }
+    .image-display a {
+        margin-top: 0;
+    }
+
 }
