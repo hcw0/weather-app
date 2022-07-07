@@ -350,18 +350,14 @@ body {
         margin-top: 0;
     }
 
-    .content-right {
-        margin-left: -10px;
-    }
-
     .content-left p, .content-left h2, .content-left h1, .content-left h3 {
         text-align: center;
     }
 
     .image-display {
-        max-width: 300px;
+        max-width: 400px;
         height: 200px;
-        margin-left: -20px;
+        margin-top: 10px;
     }
 
     .image-display > a {
@@ -371,6 +367,31 @@ body {
     .image-display > img {
         margin: 0;
     }
+
+    .content-right {
+        width: 100%;
+    }
+
+    .content-right-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .feels-like-container {
+        margin-top: 0;
+    }
+
+    .feels-like-container, .pressure, .wind-speed, .humidity {
+        margin-right: 10px;
+    }
+
     .weather-cards {
         margin-bottom: 10px;
     }
