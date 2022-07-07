@@ -81,6 +81,7 @@ body {
 
 .unit-form {
     margin-right: 10px;
+    display: flex;
 }
 
 .unit-form input[type="radio"] {
@@ -91,7 +92,6 @@ body {
   
 .unit-form label {
     cursor: pointer;
-    display: inline-block;
     background-color: white;
     padding: 10px 20px;
     font-size: .8rem;
@@ -121,8 +121,9 @@ body {
 
 .imperial, .metric {
     text-align: center;
-    vertical-align: middle;
     font-weight: bold;
+    display: flex;
+    align-items: center;
 }
 
 .search-bar {
@@ -411,4 +412,12 @@ body {
         margin-top: 0;
     }
 
+}
+
+@media only screen and (min-width: 2000px) {
+    .imperial, .metric {
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+    
 }
