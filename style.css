@@ -277,7 +277,8 @@ body {
     height: 80%;
     display: flex;
     border-radius: 10px;
-    
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .day {
@@ -303,7 +304,9 @@ body {
 
 @media only screen and (max-width: 720px) {
     .container {
-        height: 700px;
+        min-height: 700px;
+        height: auto !important;
+        margin: 20px 0 20px 0;
     }
     .header {
         justify-content: center;
@@ -341,7 +344,14 @@ body {
 
     .content-left{
         flex: 1 1 200px;
-        margin-top: 35px;
+    }
+
+    #temperature {
+        margin-top: 0;
+    }
+
+    .content-right {
+        margin-left: -10px;
     }
 
     .content-left p, .content-left h2, .content-left h1, .content-left h3 {
@@ -351,10 +361,18 @@ body {
     .image-display {
         max-width: 300px;
         height: 200px;
+        margin-left: -20px;
+    }
+
+    .image-display > a {
+        text-align: center;
     }
 
     .image-display > img {
         margin: 0;
+    }
+    .weather-cards {
+        margin-bottom: 10px;
     }
 }
 
