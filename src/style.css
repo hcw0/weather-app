@@ -34,6 +34,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     overflow: scroll;
+    min-height: 700px;
 }
 
 .container-body {
