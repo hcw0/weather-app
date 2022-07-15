@@ -10,6 +10,7 @@ export async function directGeocodingCall (location){
         {mode: 'cors'});
     }
     const locationData = await response.json();
+    console.log(locationData);
     } catch(error){
     }
 }
