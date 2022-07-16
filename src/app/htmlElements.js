@@ -14,4 +14,5 @@ export const htmlElements = {
     currentHumidity: document.querySelector(".current-humidity"),
     currentPressure: document.querySelector(".current-pressure"),
     currentWindSpeed: document.querySelector(".current-wind-speed"),
+    mainImage: document.querySelector(".main-image"),
 }

@@ -13,7 +13,7 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         const data = await response.json();
         console.log(data);
 
-        let pressure = units == "metric" ? data.current.pressure : (data.current.pressure * 0.0145038).toFixed(1);
+        const pressure = units == "metric" ? data.current.pressure : (data.current.pressure * 0.0145038).toFixed(1);
         
         htmlElements.currentTemperature.textContent = Math.trunc(data.current.temp).toString() + "°" + unitsVar.degrees;
         htmlElements.currentWeatherType.textContent = "[ " + data.current.weather[0].main.toString() + " ]";
@@ -21,6 +21,26 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         htmlElements.currentHumidity.textContent = data.current.humidity.toString() + unitsVar.humidity;
         htmlElements.currentPressure.textContent = pressure.toString() + " " + unitsVar.pressure;
         htmlElements.currentWindSpeed.textContent = (data.current.wind_speed.toFixed(1)).toString() + " " + unitsVar.speed;
+        
+        const currentWeatherType = data.current.weather[0].main;
+
+        if (currentWeatherType.toString().toLowerCase() == "thunderstorm"){
+            htmlElements.mainImage.src = "./images/Storm.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "drizzle" || currentWeatherType.toString().toLowerCase() == "rain"){
+            htmlElements.mainImage.src = "./images/Rain.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "snow"){
+            htmlElements.mainImage.src = "./images/Snow.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "clear"){
+            htmlElements.mainImage.src = "./images/Sunny.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "clouds"){
+            htmlElements.mainImage.src = "./images/Cloudy.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "tornado"){
+            htmlElements.mainImage.src = "./images/Tornado.gif";
+        } else{
+            htmlElements.mainImage.src = "./images/Default.gif";
+        }
+
+        console.log(currentWeatherType);
 
         data.daily.forEach(day => {
             var dayname = new Date(day.dt * 1000).toLocaleDateString("en", {
