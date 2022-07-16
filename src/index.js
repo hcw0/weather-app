@@ -1,8 +1,9 @@
 import { CurrentDate } from "./app/CurrentDate";
-import { directGeocodingCall } from "./app/directGeocodingCall";
 import { addGooglePlacesAPI } from "./app/addGooglePlacesAPI"
+import { addEventListenerToSearchBar } from "./app/addEventListenerToSearchBar";
 
+
+document.activeElement.blur();
+addEventListenerToSearchBar();
 addGooglePlacesAPI();
-
-directGeocodingCall("City of london");
 CurrentDate.updateDate();

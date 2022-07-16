@@ -1,23 +1,32 @@
 
+import { htmlElements } from "./htmlElements";
+
 export function addGooglePlacesAPI (){
     let tag = document.createElement("script");
     tag.setAttribute('defer','');
     tag.setAttribute('async','');
-    tag.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyApAPMItRZxLtlZossNyVNFCMx407u4J0E&libraries=places&callback=initMap";
+    tag.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB0s970PqYGaxnHPxFOZYzeJ2RMUB2Pej0&libraries=places&callback=initMap";
     window.initMap = function() {
         let input = document.getElementById("search-bar");
-        const options = {
-            types: ['cities'],
-            fields: ["address_components", "geometry"],
-        }
-        let autocomplete = new google.maps.places.Autocomplete(input, options);
         
-        // autocomplete.addListener("place_changed", () => {
-        //     const place = autocomplete.getPlace();
-        //     if (!place.geometry || !place.geometry.location){
-        //         return;
-        //     }
-        // })
+        const options = {
+            fields: ["address_components", "geometry"],
+            types: ['(cities)'],
+        }
+        let autocomplete = new google.maps.places.Autocomplete(input);
+        
+        autocomplete.addListener("place_changed", () => {
+            const place = autocomplete.getPlace();
+            if (!place.geometry || !place.geometry.location){
+                return;
+            }
+
+            const latitude = place.geometry.location.lat();
+            const longitude = place.geometry.location.lng();
+            
+            console.log(latitude + " " + longitude);
+            
+        });
     }
     document.getElementsByTagName("head")[0].appendChild(tag);
 

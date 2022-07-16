@@ -1,5 +1,4 @@
 * {
-    /* outline: 2px solid red; */
     box-sizing: border-box;
 }
 
@@ -137,7 +136,7 @@ body {
     position: relative;
     display: block;
     width: 100%;
-    max-width: 3rem;
+    max-width: 3.2rem;
     transition: 0.4s linear;
     overflow: hidden;
 }
@@ -149,7 +148,7 @@ body {
     outline: none;
     border-radius: 50px;
     background-color: #003566;
-    padding: 15px;
+    padding: 15px 35px 15px 15px;
     color: #003566;
     font-size: .9rem;
     cursor: pointer;
@@ -166,22 +165,36 @@ body {
     right: calc(53px / 2);
     top: 50%;
     transform: translate(50%, -50%);
-    width: 12px;
+    width: 15px;
     height: 20px;
     pointer-events: none;
     color: white;
 }
 
 .search-bar:hover, .search-bar:focus {
-    max-width: 15vw;
+    max-width: 15vw !important;
 }
 
-.search-bar:hover .search-box, .search-bar:focus .search-box {
+.search-bar-hover {
+    max-width: 15vw !important;
+}
+
+.search-bar:hover .search-box, .search-bar:focus .search-box{
     background-color: white;
     border: 2px solid #003566;
 }
+
+.search-box-hover {
+    background-color: white !important;
+    border: 2px solid #003566 !important;
+}
+
 .search-bar:hover .fa-magnifying-glass {
     color: #003566;
+}
+
+.fa-magnifying-glass-hover {
+    color: #003566 !important;
 }
 
 .content {
@@ -338,7 +351,7 @@ body {
         flex-wrap: wrap;
     }
     .search-bar:hover, .search-bar:focus {
-        max-width: 200px;
+        max-width: 200px !important;
         margin-top: 4px;
     }
     .unit-form label {
@@ -472,3 +485,31 @@ body {
         font-size: 3rem;
     }
 }
+
+.pac-icon {
+    color: #003566 !important;
+    background-image: url("../src/images/location-dot-solid.svg") !important;
+    background-position: center !important; 
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    filter: invert(10%) sepia(99%) saturate(4399%) hue-rotate(193deg) brightness(82%) contrast(111%);
+}
+
+.pac-container {
+    cursor: pointer !important;
+    box-shadow: none !important;
+    border: 2px solid #003566 !important;
+    border-radius: 5px !important;
+    position: absolute !important;
+}
+
+.pac-matched {
+    font-family: 'Lato', sans-serif !important;
+    color: #003566 !important;
+}
+
+.pac-item > span {
+    color: #b8c0ff;
+    font-weight: bold;
+}
+
