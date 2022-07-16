@@ -6,6 +6,12 @@ export const openWeatherMapCall = async (latitude, longitude) => {
         {mode: 'cors'});
         const data = await response.json();
         console.log(data);
+        data.daily.forEach(day => {
+            var dayname = new Date(day.dt * 1000).toLocaleDateString("en", {
+                weekday: "long",
+            });
+            console.log(dayname);
+        })
     } catch(error){
         console.log(error);
     }
