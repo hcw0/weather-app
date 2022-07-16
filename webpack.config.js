@@ -5,6 +5,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
+    mode: "development",
     entry: "./src/index.js",
     output: {
         filename: "main.[contenthash].js",
