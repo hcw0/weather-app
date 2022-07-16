@@ -24,7 +24,7 @@ export const CurrentDate = (() => {
             case 5:
                 day = "Friday";
                 break;
-            case 2:
+            case 6:
                 day = "Saturday";
                     break;
         }

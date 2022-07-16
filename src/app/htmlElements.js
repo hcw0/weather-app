@@ -6,4 +6,5 @@ export const htmlElements = {
     searchBar: document.querySelector(".search-bar"),
     searchBox: document.querySelector(".search-box"),
     magnifyingGlass: document.querySelector(".fa-magnifying-glass"),
+    cityElement: document.querySelector(".city-element"),
 }

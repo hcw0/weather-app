@@ -1,5 +1,4 @@
-
-import { htmlElements } from "./htmlElements";
+import { getCityName } from "./getCityName";
 
 export function addGooglePlacesAPI (){
     let tag = document.createElement("script");
@@ -23,8 +22,9 @@ export function addGooglePlacesAPI (){
 
             const latitude = place.geometry.location.lat();
             const longitude = place.geometry.location.lng();
-            
+
             console.log(latitude + " " + longitude);
+            getCityName(latitude, longitude);
             
         });
     }
