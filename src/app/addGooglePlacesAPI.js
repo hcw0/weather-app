@@ -23,7 +23,6 @@ export function addGooglePlacesAPI (){
             const latitude = place.geometry.location.lat();
             const longitude = place.geometry.location.lng();
 
-            console.log(latitude + " " + longitude);
             getCityName(latitude, longitude);
             
         });

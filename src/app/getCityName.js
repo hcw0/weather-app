@@ -23,8 +23,6 @@ export function getCityName(latitude, longitude) {
                     }
                 })
             })
-            
-            console.log(firstResult);
 
             if (sublocality != "" && country != ""){
                 htmlElements.cityElement.textContent = `${sublocality}, ${country}`;
