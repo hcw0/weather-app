@@ -7,4 +7,11 @@ export const htmlElements = {
     searchBox: document.querySelector(".search-box"),
     magnifyingGlass: document.querySelector(".fa-magnifying-glass"),
     cityElement: document.querySelector(".city-element"),
+    weatherCards: document.querySelectorAll(".weather-cards"),
+    currentTemperature: document.querySelector(".current-temperature"),
+    currentWeatherType: document.querySelector(".current-weather-type"),
+    currentFeelsLike: document.querySelector(".current-feels-like"),
+    currentHumidity: document.querySelector(".current-humidity"),
+    currentPressure: document.querySelector(".current-pressure"),
+    currentWindSpeed: document.querySelector(".current-wind-speed"),
 }

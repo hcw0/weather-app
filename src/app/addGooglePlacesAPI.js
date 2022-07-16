@@ -26,7 +26,7 @@ export function addGooglePlacesAPI (){
             
             console.log(latitude + " " + longitude);
             getCityName(latitude, longitude);
-            openWeatherMapCall(latitude, longitude);
+            openWeatherMapCall(latitude, longitude, "metric");
         });
     }
     document.getElementsByTagName("head")[0].appendChild(tag);
