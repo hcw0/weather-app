@@ -1,4 +1,5 @@
 import { getCityName } from "./getCityName";
+import { openWeatherMapCall } from "./openWeatherMapCall";
 
 export function addGooglePlacesAPI (){
     let tag = document.createElement("script");
@@ -22,9 +23,10 @@ export function addGooglePlacesAPI (){
 
             const latitude = place.geometry.location.lat();
             const longitude = place.geometry.location.lng();
-
-            getCityName(latitude, longitude);
             
+            console.log(latitude + " " + longitude);
+            getCityName(latitude, longitude);
+            openWeatherMapCall(latitude, longitude);
         });
     }
     document.getElementsByTagName("head")[0].appendChild(tag);
