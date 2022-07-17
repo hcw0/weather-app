@@ -1,35 +1,15 @@
 import { htmlElements } from "./htmlElements";
-
-export const updateDate = (unixTimeStamp, offsetSeconds) => {
-    const correctTimeStamp = unixTimeStamp + (offsetSeconds / 3600); //convert seconds to hour offset
-    const date = new Date(correctTimeStamp * 1000);
-    let day;
-
-    switch (date.getDay()) {
-        case 0:
-            day = "Sunday";
-            break;
-        case 1:
-            day = "Monday";
-            break;
-        case 2:
-            day = "Tuesday";
-            break;
-        case 3:
-            day = "Wednesday";
-            break;
-        case 4:
-            day = "Thursday";
-            break;
-        case 5:
-            day = "Friday";
-            break;
-        case 6:
-            day = "Saturday";
-                break;
-    }
-
-    const amOrPm = date.getHours() >= 12 ? "PM" : "AM";
-    htmlElements.dateObject.textContent = day + ", " + date.toLocaleDateString("en-US");
-    htmlElements.timeObject.textContent = date.getHours() + ":" + date.getMinutes() + " " + amOrPm;
+import { getDayOfWeek } from "./getDayOfWeek";
+export const updateDate = (unixTimeStamp, offset) => {
+    let correctTimeStamp = unixTimeStamp + (offset);
+    let date = new Date(correctTimeStamp * 1000);
+    console.log(date);
+    let day = getDayOfWeek(date.getUTCDay());
+    
+    const amOrPm = date.getUTCHours() >= 12 ? "PM" : "AM";
+    htmlElements.dateObject.textContent = day + ", " + (date.getUTCMonth() + 1) + "/" + date.getUTCDate() + "/" + date.getUTCFullYear();
+    htmlElements.timeObject.textContent = date.getUTCHours().toString().padStart(2, '0') + ":" + date.getUTCMinutes().toString().padStart(2, '0') + " " + amOrPm;
+    console.log(correctTimeStamp);
+    console.log(date.toLocaleString());
+    console.log("ksfksfskmf")
 }

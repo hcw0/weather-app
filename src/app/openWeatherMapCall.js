@@ -1,6 +1,7 @@
 import { htmlElements } from "./htmlElements";
 import { updateDate } from "./updateDate";
-
+import { getIconClass } from "./getIconClass";
+import { getDayOfWeek } from "./getDayOfWeek";
 
 export const openWeatherMapCall = async (latitude, longitude, units) => {
     try{
@@ -55,21 +56,35 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             htmlElements.mainImage.src = "./images/Default.gif";
         }
 
-        console.log(currentTemperature);    
-        console.log(currentWeatherType);
+        // console.log(currentTemperature);    
+        // console.log(currentWeatherType);
 
         const unixTimeStamp = data.current.dt;
-        const offset = data.timezone_offset;
+        const offset = data.timezone_offset; 
+        console.log(unixTimeStamp);
+        console.log(offset * 3600)
         updateDate(unixTimeStamp, offset);
 
 
-        data.daily.forEach(day => {
-            var dayname = new Date(day.dt * 1000).toLocaleDateString("en", {
-                weekday: "long",
-            });
-            console.log(dayname);
-            
-        })
+        let index = 0;
+        let currentDayNumber = new Date((unixTimeStamp + offset) * 1000).getDay();
+        console.log(currentDayNumber);
+        for (let i = 1; i < 7; i++){
+            let nextDayNumber = (currentDayNumber + i) % 7;
+            let dayName = getDayOfWeek(nextDayNumber);
+            console.log(nextDayNumber);
+            let iconClass = getIconClass(data.daily[i].weather[0].main.toString());
+
+            htmlElements.forecastDayElements[index].textContent = dayName;
+            htmlElements.forecastMaxTempElements[index].textContent = Math.trunc(data.daily[i].temp.max).toString() + "°" + unitsVar.degrees;
+            htmlElements.forecastMinTempElements[index].textContent = Math.trunc(data.daily[i].temp.min).toString() + "°" + unitsVar.degrees;
+            htmlElements.forecastIcons[index].className = "";
+            htmlElements.forecastIcons[index].classList.add("fa-solid", "fa-2x", "forecast-icon", iconClass);
+            index++;
+        }
+
+
+
     } catch(error){
         console.log(error);
     }

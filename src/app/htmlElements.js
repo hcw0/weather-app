@@ -7,7 +7,6 @@ export const htmlElements = {
     searchBox: document.querySelector(".search-box"),
     magnifyingGlass: document.querySelector(".fa-magnifying-glass"),
     cityElement: document.querySelector(".city-element"),
-    weatherCards: document.querySelectorAll(".weather-cards"),
     currentTemperature: document.querySelector(".current-temperature"),
     currentWeatherType: document.querySelector(".current-weather-type"),
     currentFeelsLike: document.querySelector(".current-feels-like"),
@@ -15,4 +14,8 @@ export const htmlElements = {
     currentPressure: document.querySelector(".current-pressure"),
     currentWindSpeed: document.querySelector(".current-wind-speed"),
     mainImage: document.querySelector(".main-image"),
+    forecastDayElements: document.querySelectorAll(".day"),
+    forecastMaxTempElements: document.querySelectorAll(".max-temp"),
+    forecastMinTempElements: document.querySelectorAll(".min-temp"),
+    forecastIcons: document.querySelectorAll(".forecast-icon"),
 }
