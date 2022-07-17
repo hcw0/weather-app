@@ -13,7 +13,6 @@ export function getCityName(latitude, longitude, fallbackName) {
         if (status == google.maps.GeocoderStatus.OK) {
             let [sublocality, locality, country] = ["", "", ""];
             const firstResult = results[0].address_components;
-            console.log(firstResult)
             firstResult.forEach(element => {
                 element.types.forEach(type => {
                     if (type.toLowerCase() == "sublocality"){

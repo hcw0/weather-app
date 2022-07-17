@@ -4,7 +4,6 @@ import { getDayOfWeek } from "./getDayOfWeek";
 export const updateDate = (unixTimeStamp, offset) => {
     let correctTimeStamp = unixTimeStamp + (offset);
     let date = new Date(correctTimeStamp * 1000);
-    console.log(date);
     let day = getDayOfWeek(date.getUTCDay());
     
     const amOrPm = date.getUTCHours() >= 12 ? "PM" : "AM";

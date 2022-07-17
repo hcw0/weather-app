@@ -1,4 +1,5 @@
 import { getCityName } from "./getCityName";
+import { htmlElements } from "./htmlElements";
 import { openWeatherMapCall } from "./openWeatherMapCall";
 
 export function addGooglePlacesAPI (){
@@ -25,9 +26,13 @@ export function addGooglePlacesAPI (){
             const latitude = place.geometry.location.lat();
             const longitude = place.geometry.location.lng();
             
-            console.log(latitude + " " + longitude);
             getCityName(latitude, longitude, place.formatted_address.toString());
-            openWeatherMapCall(latitude, longitude, "metric");
+
+            let unit = htmlElements.metric.checked ? "metric" : "imperial";
+            openWeatherMapCall(latitude, longitude, unit);
+
+            htmlElements.currentLatitude = latitude;
+            htmlElements.currentLongitude = longitude;
         });
 
     }

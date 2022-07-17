@@ -8,7 +8,6 @@ export function addEventListenerToSearchBar () {
     htmlElements.searchBar.addEventListener("keydown", (e) => {
         if (e.keyCode == 13){
             e.preventDefault();
-            console.log("dksd")
             document.querySelector(".pac-container").style.removeProperty("display");
             return false;
         }
