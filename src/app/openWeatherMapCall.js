@@ -1,4 +1,6 @@
 import { htmlElements } from "./htmlElements";
+import { updateDate } from "./updateDate";
+
 
 export const openWeatherMapCall = async (latitude, longitude, units) => {
     try{
@@ -53,14 +55,20 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             htmlElements.mainImage.src = "./images/Default.gif";
         }
 
-        console.log(currentTemperature);
+        console.log(currentTemperature);    
         console.log(currentWeatherType);
+
+        const unixTimeStamp = data.current.dt;
+        const offset = data.timezone_offset;
+        updateDate(unixTimeStamp, offset);
+
 
         data.daily.forEach(day => {
             var dayname = new Date(day.dt * 1000).toLocaleDateString("en", {
                 weekday: "long",
             });
             console.log(dayname);
+            
         })
     } catch(error){
         console.log(error);
