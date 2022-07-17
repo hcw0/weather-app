@@ -500,7 +500,7 @@ body {
 
 .pac-icon {
     color: #003566 !important;
-    background-image: url("../src/images/location-dot-solid.svg") !important;
+    background-image: url("./images/location-dot-solid.svg") !important;
     background-position: center !important; 
     background-repeat: no-repeat !important;
     background-size: cover !important;
