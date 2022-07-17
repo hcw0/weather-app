@@ -29,8 +29,7 @@ export const updateDate = (unixTimeStamp, offsetSeconds) => {
                 break;
     }
 
-
+    const amOrPm = date.getHours() >= 12 ? "PM" : "AM";
     htmlElements.dateObject.textContent = day + ", " + date.toLocaleDateString("en-US");
-    htmlElements.timeObject.textContent = date.getHours() + ":" + date.getMinutes();
-    console.log(unixTimeStamp + " " + offsetSeconds) 
+    htmlElements.timeObject.textContent = date.getHours() + ":" + date.getMinutes() + " " + amOrPm;
 }
