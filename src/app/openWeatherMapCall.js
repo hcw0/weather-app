@@ -81,6 +81,9 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             index++;
         }
 
+        htmlElements.searchBox.value = "";
+        htmlElements.searchBox.blur();
+        htmlElements.cityElement.focus();
     } catch(error){
         console.log(error);
     }

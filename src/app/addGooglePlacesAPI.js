@@ -7,6 +7,7 @@ export function addGooglePlacesAPI (){
     tag.setAttribute('async','');
     tag.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyB0s970PqYGaxnHPxFOZYzeJ2RMUB2Pej0&libraries=places&callback=initMap";
     window.initMap = function() {
+
         let input = document.getElementById("search-bar");
         
         const options = {
@@ -20,7 +21,7 @@ export function addGooglePlacesAPI (){
             if (!place.geometry || !place.geometry.location){
                 return;
             }
-
+            
             const latitude = place.geometry.location.lat();
             const longitude = place.geometry.location.lng();
             

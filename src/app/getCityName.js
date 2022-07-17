@@ -1,5 +1,6 @@
 import { htmlElements } from "./htmlElements";
 export function getCityName(latitude, longitude, fallbackName) {
+    document.querySelector(".pac-container").style.display = "none";
     let geocoder = new google.maps.Geocoder();
     const latlng = {
         lat: parseFloat(latitude),

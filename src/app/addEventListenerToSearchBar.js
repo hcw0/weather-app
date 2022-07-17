@@ -5,6 +5,22 @@ export function addEventListenerToSearchBar () {
         htmlElements.searchBox.focus();
     });
 
+    ["mouseout", "mouseleave"].forEach(event => {
+        htmlElements.searchBox.addEventListener(event, () => {
+            htmlElements.searchBox.blur();
+            htmlElements.cityElement.focus();
+        });
+    })
+
+    htmlElements.searchBar.addEventListener("keydown", (e) => {
+        if (e.keyCode == 13){
+            e.preventDefault();
+            console.log("dksd")
+            document.querySelector(".pac-container").style.removeProperty("display");
+            return false;
+        }
+    });
+
     htmlElements.searchBox.addEventListener("input", () => {
         htmlElements.searchBar.classList.add("search-bar-hover");
         htmlElements.searchBox.classList.add("search-box-hover");
@@ -18,6 +34,6 @@ export function addEventListenerToSearchBar () {
         htmlElements.magnifyingGlass.classList.remove("fa-magnifying-glass-hover");
         document.querySelector(".pac-container").style.display = "none";
         htmlElements.searchBox.value = "";
-    })
-    
+    });
+
 }
