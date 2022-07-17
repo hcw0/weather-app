@@ -14,15 +14,26 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         console.log(data);
 
         const pressure = units == "metric" ? data.current.pressure : (data.current.pressure * 0.0145038).toFixed(1);
-        
+        const currentTemperature = Math.trunc(data.current.temp);
+        let currentWeatherType = data.current.weather[0].main;
+
+        if (currentWeatherType.toString().toLowerCase() == "clear"){
+            if (units == "metric" && currentTemperature > 28){
+                console.log(currentWeatherType);
+                currentWeatherType = "Sunny";
+            } else if(units == "imperial" && currentTemperature > 82){
+                console.log(currentWeatherType)
+                currentWeatherType = "Sunny";
+            }
+        }
+
         htmlElements.currentTemperature.textContent = Math.trunc(data.current.temp).toString() + "°" + unitsVar.degrees;
-        htmlElements.currentWeatherType.textContent = "[ " + data.current.weather[0].main.toString() + " ]";
+        htmlElements.currentWeatherType.textContent = "[ " + currentWeatherType.toString() + " ]";
         htmlElements.currentFeelsLike.textContent = Math.round(data.current.feels_like).toString() + "°" + unitsVar.degrees;
         htmlElements.currentHumidity.textContent = data.current.humidity.toString() + unitsVar.humidity;
         htmlElements.currentPressure.textContent = pressure.toString() + " " + unitsVar.pressure;
         htmlElements.currentWindSpeed.textContent = (data.current.wind_speed.toFixed(1)).toString() + " " + unitsVar.speed;
-        
-        const currentWeatherType = data.current.weather[0].main;
+
 
         if (currentWeatherType.toString().toLowerCase() == "thunderstorm"){
             htmlElements.mainImage.src = "./images/Storm.gif";
@@ -31,6 +42,8 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         } else if(currentWeatherType.toString().toLowerCase() == "snow"){
             htmlElements.mainImage.src = "./images/Snow.gif";
         } else if(currentWeatherType.toString().toLowerCase() == "clear"){
+            htmlElements.mainImage.src = "./images/Clear.gif";
+        } else if(currentWeatherType.toString().toLowerCase() == "sunny"){
             htmlElements.mainImage.src = "./images/Sunny.gif";
         } else if(currentWeatherType.toString().toLowerCase() == "clouds"){
             htmlElements.mainImage.src = "./images/Cloudy.gif";
@@ -40,6 +53,7 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             htmlElements.mainImage.src = "./images/Default.gif";
         }
 
+        console.log(currentTemperature);
         console.log(currentWeatherType);
 
         data.daily.forEach(day => {
