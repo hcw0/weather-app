@@ -151,7 +151,7 @@ body {
     padding: 15px 35px 15px 15px;
     color: #003566;
     font-size: .9rem;
-    cursor: pointer;
+    cursor: text;
     transition: 0.4s linear;
     font-weight: bold;
 }
@@ -517,11 +517,15 @@ body {
 
 .pac-matched {
     font-family: 'Lato', sans-serif !important;
-    color: #003566 !important;
+    color: #FFC100 !important;
 }
 
 .pac-item > span {
-    color: #b8c0ff;
+    color: #003566;
     font-weight: bold;
 }
 
+.pac-item:hover {
+    background-color:#b8c0ff;
+    cursor: pointer;
+}

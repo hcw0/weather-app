@@ -1,5 +1,6 @@
 import { htmlElements } from "./htmlElements";
 import { getDayOfWeek } from "./getDayOfWeek";
+
 export const updateDate = (unixTimeStamp, offset) => {
     let correctTimeStamp = unixTimeStamp + (offset);
     let date = new Date(correctTimeStamp * 1000);
@@ -9,7 +10,4 @@ export const updateDate = (unixTimeStamp, offset) => {
     const amOrPm = date.getUTCHours() >= 12 ? "PM" : "AM";
     htmlElements.dateObject.textContent = day + ", " + (date.getUTCMonth() + 1) + "/" + date.getUTCDate() + "/" + date.getUTCFullYear();
     htmlElements.timeObject.textContent = date.getUTCHours().toString().padStart(2, '0') + ":" + date.getUTCMinutes().toString().padStart(2, '0') + " " + amOrPm;
-    console.log(correctTimeStamp);
-    console.log(date.toLocaleString());
-    console.log("ksfksfskmf")
 }

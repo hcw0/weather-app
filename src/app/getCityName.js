@@ -1,5 +1,5 @@
 import { htmlElements } from "./htmlElements";
-export function getCityName(latitude, longitude) {
+export function getCityName(latitude, longitude, fallbackName) {
     let geocoder = new google.maps.Geocoder();
     const latlng = {
         lat: parseFloat(latitude),
@@ -12,6 +12,7 @@ export function getCityName(latitude, longitude) {
         if (status == google.maps.GeocoderStatus.OK) {
             let [sublocality, locality, country] = ["", "", ""];
             const firstResult = results[0].address_components;
+            console.log(firstResult)
             firstResult.forEach(element => {
                 element.types.forEach(type => {
                     if (type.toLowerCase() == "sublocality"){
@@ -30,6 +31,8 @@ export function getCityName(latitude, longitude) {
                 htmlElements.cityElement.textContent = `${locality}, ${country}`;
             } else if (country != ""){
                 htmlElements.cityElement.textContent = `${country}`;
+            } else{
+                htmlElements.cityElement.textContent = `${fallbackName}`
             }
         }
     });

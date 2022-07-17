@@ -1,6 +1,5 @@
 import { htmlElements } from "./htmlElements";
 
-
 export function addEventListenerToSearchBar () {
     htmlElements.searchBar.addEventListener("mouseover", () => {
         htmlElements.searchBox.focus();

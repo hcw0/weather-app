@@ -61,8 +61,6 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
 
         const unixTimeStamp = data.current.dt;
         const offset = data.timezone_offset; 
-        console.log(unixTimeStamp);
-        console.log(offset * 3600)
         updateDate(unixTimeStamp, offset);
 
 
@@ -82,8 +80,6 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             htmlElements.forecastIcons[index].classList.add("fa-solid", "fa-2x", "forecast-icon", iconClass);
             index++;
         }
-
-
 
     } catch(error){
         console.log(error);

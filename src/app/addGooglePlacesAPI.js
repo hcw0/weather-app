@@ -25,9 +25,10 @@ export function addGooglePlacesAPI (){
             const longitude = place.geometry.location.lng();
             
             console.log(latitude + " " + longitude);
-            getCityName(latitude, longitude);
+            getCityName(latitude, longitude, place.formatted_address.toString());
             openWeatherMapCall(latitude, longitude, "metric");
         });
+
     }
     document.getElementsByTagName("head")[0].appendChild(tag);
 
