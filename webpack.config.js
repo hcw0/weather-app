@@ -6,7 +6,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-    mode: "development",
     entry: "./src/index.js",
     output: {
         filename: "main.[contenthash].js",
