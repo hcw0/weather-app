@@ -14,7 +14,6 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely,alerts&appid=9e4b95876253dc331b1210331c2fd5d7&units=${units}`,
         {mode: 'cors'});
         const data = await response.json();
-        console.log(data);
 
         const pressure = units == "metric" ? data.current.pressure : (data.current.pressure * 0.0145038).toFixed(1);
         const currentTemperature = Math.trunc(data.current.temp);
@@ -22,10 +21,8 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
 
         if (currentWeatherType.toString().toLowerCase() == "clear"){
             if (units == "metric" && currentTemperature > 28){
-                console.log(currentWeatherType);
                 currentWeatherType = "Sunny";
             } else if(units == "imperial" && currentTemperature > 82){
-                console.log(currentWeatherType)
                 currentWeatherType = "Sunny";
             }
         }
@@ -56,9 +53,6 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
             htmlElements.mainImage.src = "./images/Default.gif";
         }
 
-        // console.log(currentTemperature);    
-        // console.log(currentWeatherType);
-
         const unixTimeStamp = data.current.dt;
         const offset = data.timezone_offset; 
         updateDate(unixTimeStamp, offset);
@@ -66,11 +60,9 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
 
         let index = 0;
         let currentDayNumber = new Date((unixTimeStamp + offset) * 1000).getDay();
-        console.log(currentDayNumber);
         for (let i = 1; i < 7; i++){
             let nextDayNumber = (currentDayNumber + i) % 7;
             let dayName = getDayOfWeek(nextDayNumber);
-            console.log(nextDayNumber);
             let iconClass = getIconClass(data.daily[i].weather[0].main.toString());
 
             htmlElements.forecastDayElements[index].textContent = dayName;
@@ -85,7 +77,7 @@ export const openWeatherMapCall = async (latitude, longitude, units) => {
         htmlElements.searchBox.blur();
         htmlElements.cityElement.focus();
     } catch(error){
-        console.log(error);
+
     }
 
 }
