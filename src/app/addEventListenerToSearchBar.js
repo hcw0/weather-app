@@ -5,13 +5,6 @@ export function addEventListenerToSearchBar () {
         htmlElements.searchBox.focus();
     });
 
-    ["mouseout", "mouseleave"].forEach(event => {
-        htmlElements.searchBox.addEventListener(event, () => {
-            htmlElements.searchBox.blur();
-            htmlElements.cityElement.focus();
-        });
-    })
-
     htmlElements.searchBar.addEventListener("keydown", (e) => {
         if (e.keyCode == 13){
             e.preventDefault();
